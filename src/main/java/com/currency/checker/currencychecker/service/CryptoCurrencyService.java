@@ -15,12 +15,11 @@ import java.net.http.HttpResponse;
 public class CryptoCurrencyService extends BaseCurrencyService {
 
     @Autowired
-    public CryptoCurrencyService(CurrencyServicesConfig config) {
-        super(config);
+    public CryptoCurrencyService(CurrencyServicesConfig config, ObjectMapper mapper) {
+        super(config, mapper);
     }
 
     public CryptoCurrencyList getBitcoinCurrency() throws CurrencyException {
-        ObjectMapper objectMapper = getCurrencyObjectMapper();
         try {
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(new URI(currencyServicesConfig.getBTCCurrencyURL()))

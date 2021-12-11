@@ -15,12 +15,11 @@ import java.net.http.HttpResponse;
 public class CurrencyService extends BaseCurrencyService {
 
     @Autowired
-    public CurrencyService(CurrencyServicesConfig config) {
-        super(config);
+    public CurrencyService(CurrencyServicesConfig config, ObjectMapper mapper) {
+        super(config, mapper);
     }
 
     public CBRGeneralObject getCBRCurrency() throws CurrencyException {
-        ObjectMapper objectMapper = getCurrencyObjectMapper();
         try {
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(new URI(currencyServicesConfig.getDefaultCurrencyURL()))

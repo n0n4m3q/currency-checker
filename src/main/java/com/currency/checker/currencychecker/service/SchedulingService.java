@@ -30,11 +30,13 @@ public class SchedulingService {
         this.schedulingConfig = schedulingConfig;
     }
 
+    // 10:00 every day
     @Scheduled(cron = "0 0 10 * * *", zone = "Europe/Moscow")
     private void notifyWithCurrenciesMorning() {
         currencyBot.sendCurrenciesTo(telegramConfig.getGeneralChatId(), greetingsConfig.getGreetingsMorning() + "\n");
     }
 
+    // 22:00 every day
     @Scheduled(cron = "0 0 22 * * *", zone = "Europe/Moscow")
     private void notifyWithCurrenciesEvening() {
         currencyBot.sendCurrenciesTo(telegramConfig.getGeneralChatId(), greetingsConfig.getGreetingsEvening() + "\n");
