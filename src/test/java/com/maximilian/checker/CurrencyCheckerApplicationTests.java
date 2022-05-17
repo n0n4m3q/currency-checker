@@ -1,4 +1,4 @@
-package com.currency.checker.currencychecker;
+package com.maximilian.checker;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

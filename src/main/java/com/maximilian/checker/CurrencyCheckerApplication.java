@@ -1,4 +1,4 @@
-package com.currency.checker.currencychecker;
+package com.maximilian.checker;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
