@@ -60,7 +60,6 @@ public class GreetingsConfig {
                 logger.warn("Invalid pair '" + pair + "' to parse");
             }
         }
-        logger.info(result.toString());
         return result;
     }
 }
